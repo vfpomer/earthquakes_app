@@ -1,3 +1,5 @@
+#------------Libraries-----------------
+# Import necessary libraries
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -7,23 +9,23 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
+#---------------------------------------
 
-
-# Page configuration
+#-----------------Page configuration------------
 st.set_page_config(
     page_title="Seismic Analysis Dashboard",
     page_icon="🌍",
     layout="wide"
 )
 
-# Title and description
+#--------------Title and description--------------------------------------
 st.title("🌍 Interactive Seismic Activity Dashboard")
 st.markdown("""
 This dashboard allows you to explore seismic data for a complete month.
 Use the filters and selectors in the sidebar to customize your analysis.
 """)
 
-# Global variables for safe initialization
+#------------------ Global variables for safe initialization----------------
 filtered_df = None
 df = None
 
@@ -31,7 +33,7 @@ df = None
 @st.cache_data(ttl=3600)
 def load_data():
     try:
-        df = pd.read_csv(r"data\all_month.csv")
+        df = pd.read_csv(r"data\all_month 1.csv")
         
         # Convert date columns to datetime AND REMOVE TIMEZONE
         df['time'] = pd.to_datetime(df['time']).dt.tz_localize(None)

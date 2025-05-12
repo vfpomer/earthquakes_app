@@ -33,7 +33,7 @@ df = None
 @st.cache_data(ttl=3600)
 def load_data():
     try:
-        df = pd.read_csv(r"data\all_month 1.csv")
+        df = pd.read_csv(r"data\all_month1.csv")
         
         # Convert date columns to datetime AND REMOVE TIMEZONE
         df['time'] = pd.to_datetime(df['time']).dt.tz_localize(None)

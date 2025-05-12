@@ -7,7 +7,7 @@
 
 Advanced seismic activity visualization and analysis platform leveraging Streamlit and Python. Offers real-time interactive analysis of earthquake data through dynamic visualizations and statistical computations.
 
-![Earthquakes App img](img/image.jpg)
+![Earthquakes App img](img\image.jpg)
 
 ## 🚀 Key Features
 
